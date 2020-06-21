@@ -8,7 +8,7 @@ import sys
 if __name__ == "__main__":
     if len(sys.argv) == 3:
         if sys.argv[1].endswith(".gif") and sys.argv[2].endswith(".gif"):
-            frames, durations = gif.processImage("test.gif")
+            frames, durations = gif.processImage(sys.argv[1])
             averageduration = sum(durations) / len(durations)
             frames[0].save(sys.argv[2], save_all=True, append_images=frames[1:], transparency=0, duration=averageduration, disposal=2, optimize=True, loop=0)
         else:
